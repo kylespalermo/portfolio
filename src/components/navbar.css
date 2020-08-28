@@ -1,0 +1,32 @@
+.navbar {
+    width: 100vw;
+    height: 10vh;
+    background-color: powderblue;
+    position: relative;
+  }
+
+.navbar-content-wrapper {
+    position: absolute;
+    border: 1px solid brown;
+    left: 5vw;
+    right: 2.5vw;
+    bottom: 1vh;
+    max-width: 1200px;
+}
+
+.navbar-header {
+    font-size: 40px;
+    text-decoration: none;
+    text-align: left;
+}
+
+.navbar-links {
+    font-size: 14px;
+    text-align: right;
+}
+
+a { 
+    text-decoration: none;
+    color: inherit;
+}
+

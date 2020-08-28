@@ -1,0 +1,100 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.main-wrapper {
+  width: 100vw;
+  position: relative;
+  text-align: right;
+}
+
+.content-wrapper {
+  margin-top: 5vw;
+  border: 2px solid orange;
+  max-width: 1200px;
+  position: absolute;
+  right: 2.5vw;
+  left: 5vw;
+}
+
+.hero-image-wrapper {
+  width: 100%;
+  height: 40vh;
+  object-fit: cover;
+  border: 1px solid blue;
+  overflow: hidden;
+}
+
+.image-grid-wrapper {
+  width: 100%;
+  padding-top: 1vw;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: left;
+  justify-content: space-between;
+}
+
+.image-grid-block {
+  display: inline-block;
+  width: 20vw;
+  margin-top: 2.5vh;
+  overflow: hidden;
+}
+
+.image-grid-image {
+  width: 100%;
+  object-fit: cover;
+  height: 60%;
+  overflow: hidden;
+}
+
+.image-grid-text {
+  padding-top: 2.5vh;
+  width: 100%;
+}
+
+.thumbnail-title {
+  font-size: 16px;
+  font-family: helvetica, arial, sans-serif;
+  font-weight: bold;
+}
+
+.thumbnail-caption {
+  font-size: 14px;
+  font-family: helvetica, arial, sans-serif;
+  font-weight: bold;
+}
+
+img {
+  max-width: 100%;
+}
+
+.navbar {
+  background-color: white;
+  width: 100vw;
+  height: 5vw;
+  border-bottom: 1px solid grey;
+}
+
+.detail-shade {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+}
+
+.detail-img-container {
+  max-width: 20%;
+}

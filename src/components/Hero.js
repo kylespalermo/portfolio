@@ -1,9 +1,9 @@
 import React from 'react';
-// import './mainimg.css';
+import './hero.css';
 
 const Hero = (props) => {
   return (
-    <img src = {props.heroImg.heroImgMain.url} />            
+    <img class = "hero-img-content" src = {props.heroImg.heroImgMain.url} />            
     );
   }
 

@@ -18,9 +18,9 @@ class Piece extends Component {
     const details = this.props.portfolioItem.imagesMain;
     
     return (
-      <div class="image-grid-block">
-        <div className = "image-grid-image">
-          <img src={this.props.portfolioItem.thumbnail.url} onClick={() => this.getDetail()} />
+      <div>
+        <div className = "content-thumb">
+          <img className = "content-thumb-img" src={this.props.portfolioItem.thumbnail.url} onClick={() => this.getDetail()} />
             {this.state.isChecked == true &&
               <div className="detail-shade"> 
                 {details.map(detail => <Detail key = {detail.toString()} detailImg = {detail} />)}
@@ -28,9 +28,9 @@ class Piece extends Component {
               </div>
             }
         </div>  
-        <div className = "image-grid-text">
-          <p>{this.props.portfolioItem.title}</p>
-          <p>{this.props.portfolioItem.caption}</p>
+        <div className = "content-text">
+          <p className = "content-title">{this.props.portfolioItem.title}</p>
+          <p className = "content-caption">{this.props.portfolioItem.caption}</p>
         </div>
       </div>  
     )

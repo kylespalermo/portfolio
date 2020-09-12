@@ -13,6 +13,7 @@ const PIECES_QUERY = gql`
         imagesMain {
           id
           url
+          imageColSpan
         }
     }
     heroImgs {

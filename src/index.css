@@ -35,6 +35,11 @@ body {
   min-height: 87.5vh;
 }
 
+.three { /*grid for the modal*/
+  padding-top: 12.5vh;
+  min-height: 87.5vh;
+}
+
 .hero-image-wrapper {
   grid-column: 2 / span 3;
   grid-row: 1;
@@ -95,6 +100,7 @@ body {
   object-fit: cover;
   overflow: hidden;
   position: relative;
+  z-index: 1;
 }
 
 .content-thumb-img {
@@ -118,20 +124,33 @@ body {
   font-size: 18px;
 }
 
-
 img {
   max-width: 100%;
 }
 
-.detail-shade {
+.modal-background {
   position: fixed;
   top: 0px;
   left: 0px;
   width: 100vw;
-  height: 100vh;
-  background-color: white;
+  min-height: 100vh;
+  background-color: purple;
+  z-index: 2;
 }
 
-.detail-img-container {
-  max-width: 20%;
+.oneColImg {
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 1;
+}
+
+.twoColImg {
+  grid-column: 2 / span 2;
+  grid-row: 1 / span 2;
+
+}
+
+.threeColImg {
+  grid-column: 3 / span 3;
+  grid-row: 1 / span 3;
+
 }

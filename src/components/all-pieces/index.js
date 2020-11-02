@@ -6,6 +6,7 @@ const PIECES_QUERY = gql`
         imageAlt
         caption
         category
+        fullText
         thumbnail {
           id
           url

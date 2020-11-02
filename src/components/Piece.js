@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Detail from "./Detail.js";
+import DetailModal from "./DetailModal.js";
 
 class Piece extends Component {
  
@@ -10,12 +11,29 @@ class Piece extends Component {
   }
 
   getDetail() {
+    
+
     this.setState(prevState => ({ isChecked: !prevState.isChecked }));
+    let scrollPos = document.querySelector('html').scrollTop;
+    if (this.state.isChecked == true) {
+    window.scrollTo(0, scrollPos); } else {
+      window.scrollTo(0, 0);
     }
+
+    if (this.state.isChecked == false) {
+      document.documentElement.style.setProperty('--dontScrollBody-Height', "100vh");
+      document.documentElement.style.setProperty('--dontScrollBody-Overflow', "hidden");
+      } else {
+        document.documentElement.style.setProperty('--dontScrollBody-Height', "auto"); 
+        document.documentElement.style.setProperty('--dontScrollBody-Overflow', "auto"); 
+      }
+
+  }
 
   render() {
 
     const details = this.props.portfolioItem.imagesMain;
+    // var detailImgsCount = 0;
     
     return (
       <div>
@@ -27,12 +45,20 @@ class Piece extends Component {
           <p className = "content-caption">{this.props.portfolioItem.caption}</p>
         </div>
         {this.state.isChecked == true &&
-          <div className="modal-background">
+        <DetailModal>
+          <div className="multi-modal-background">
             <div className = "content-wrapper three">
+              <div className = "detailText">{this.props.portfolioItem.fullText}</div>
                 {details.map(detail => <Detail key = {detail.toString()} detailImg = {detail} />)}
+                {/* {detailImgsCount = details.length}
+                {console.log(detailImgsCount)} */}
+                {/* <Detail detailImgsCountFromParent = {detailImgsCount}/> */}
+
                   <div className = "exit" onClick={() => this.getDetail()}>X</div>
             </div>
           </div>
+                  </DetailModal>
+
         }
       </div>  
     )

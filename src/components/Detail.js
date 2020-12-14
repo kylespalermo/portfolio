@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import DetailModal from "./DetailModal.js";
 let number;
+let borderVar;
 var colVar = 3;
 
 class Detail extends Component {
@@ -19,9 +20,20 @@ class Detail extends Component {
       colVar++;
     }
 
+    if (this.props.detailImg.border == true) {
+      borderVar = "1px solid grey";
+      } else { 
+          borderVar = "none";
+        }
+    
+    console.log(borderVar);
+
     this.state = {
       modalImgStyle: number,
       detailChecked: false,
+      isBorder: {
+        border: borderVar,
+      } 
     }
   }
 
@@ -39,10 +51,10 @@ class Detail extends Component {
 
   render() {
 
-    const modalImgStyle = this.state.modalImgStyle;
+    // const modalImgStyle = ;
 
     return (
-      <div className={modalImgStyle}>
+      <div className={this.state.modalImgStyle} style={this.state.isBorder} >
         <img src={this.props.detailImg.url} onClick={() => this.detailView()} />
         {this.state.detailChecked == true &&
           <DetailModal>

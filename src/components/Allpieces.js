@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { Query } from 'react-apollo';
 import PIECES_QUERY from './all-pieces/index';
 import Piece from './Piece';
-import Hero from './Hero';
+// import Hero from './Hero';
 import IntroText from './IntroText';
+import NameBanner from './NameBanner';
 
 class Allpieces extends Component {
   
@@ -16,36 +17,34 @@ class Allpieces extends Component {
           if (error)   return <div>my bad, something went wrong</div>
 
           const pieces = data.portfolioPieces;
-          const heros = data.heroImgs;
           const introtexts = data.introTexts;
 
           return (
             <div>
               <div className = "main-wrapper">
                 <div className = "content-wrapper one">
-                  <div className = "header">
-                    <div className = "header-text">
-                      Kyle<br/>Palermo
-                    </div>
-                  </div>
                   <div className = "nav-links-wrapper">
-                    <div className = "nav-links">
-                      <p>
-                        <a href="">CV</a><br/>
-                        <a href="">Writing</a><br/>
-                        <a href="">Photos</a><br/>
-                        <span className = "nav-link-scroll">Design Work</span><br/>
-                        <span>///////</span>
-                      </p>
+                    <div class = "nav-link">
+                        <a class = "bigLink" href="https://drive.google.com/file/d/1q734iPWstp0x__i-SOYPF3tTDD3ca1EH/view">CV</a><br/>
+                    </div>
+                    <div class = "nav-link">
+                        <a class = "bigLink" href="https://kylepalermo.com/writing">Writing</a><br/>
+                    </div>
+                    <div class = "nav-link">
+                        <a class = "bigLink" href="https://kpalermophoto.myportfolio.com/">Photo</a><br/>
+                    </div>
+                    <div class = "nav-link" id="scroll">
+                        <span>Design Work</span><br/>
                     </div>
                   </div>
+                  <div class = "navArrow"></div>
                   <div className = "intro-text-wrapper">
                     <div className = "intro-text">
                       {introtexts.map(intro => <IntroText key={intro.toString()} introTextGet={intro} />)}
                     </div>
                   </div>
                   <div className = "hero-image-wrapper">
-                    {heros.map(hero => <Hero key={hero.toString()} heroImg={hero} />)}
+                    <NameBanner></NameBanner>
                   </div>
                 </div>
                 <div className ="content-wrapper two">              

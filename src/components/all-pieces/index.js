@@ -6,7 +6,9 @@ const PIECES_QUERY = gql`
         imageAlt
         caption
         category
-        fullText
+         pieceDetailText {
+          html
+        }
         thumbnail {
           id
           url
@@ -15,6 +17,7 @@ const PIECES_QUERY = gql`
           id
           url
           imageColSpan
+          border
         }
     }
     heroImgs {

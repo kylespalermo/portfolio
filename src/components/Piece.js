@@ -37,9 +37,7 @@ class Piece extends Component {
     
     return (
       <div>
-        <div className = "content-thumb">
-          <img className = "content-thumb-img" src={this.props.portfolioItem.thumbnail.url} onClick={() => this.getDetail()} />
-        </div>  
+        <div className = "content-thumb"style={{backgroundImage: "url(" + this.props.portfolioItem.thumbnail.url + ")"}} onClick={() => this.getDetail()} />
         <div className = "content-text">
           <p className = "content-title">{this.props.portfolioItem.title}</p>
           <p className = "content-caption">{this.props.portfolioItem.caption}</p>
@@ -48,7 +46,11 @@ class Piece extends Component {
         <DetailModal>
           <div className="multi-modal-background">
             <div className = "content-wrapper three">
-              <div className = "detailText">{this.props.portfolioItem.fullText}</div>
+              <div className = "detailText">
+                <p class = "content-title">{this.props.portfolioItem.title}</p>
+                <p dangerouslySetInnerHTML={{__html: this.props.portfolioItem.pieceDetailText.html}}/>
+
+              </div>
                 {details.map(detail => <Detail key = {detail.toString()} detailImg = {detail} />)}
                 {/* {detailImgsCount = details.length}
                 {console.log(detailImgsCount)} */}

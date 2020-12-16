@@ -36,7 +36,7 @@ class Piece extends Component {
     // var detailImgsCount = 0;
     
     return (
-      <div>
+      <div className = "content-item-wrapper">
         <div className = "content-thumb"style={{backgroundImage: "url(" + this.props.portfolioItem.thumbnail.url + ")"}} onClick={() => this.getDetail()} />
         <div className = "content-text">
           <p className = "content-title">{this.props.portfolioItem.title}</p>

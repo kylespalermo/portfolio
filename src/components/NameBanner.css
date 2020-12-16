@@ -1,10 +1,10 @@
 :root {
+    --rotVar0: 0deg;
     --rotVar1: 0deg;
     --rotVar2: 0deg;
     --rotVar3: 0deg;
     --rotVar4: 0deg;
     --rotVar5: 0deg;
-    --rotVar6: 0deg;
 }
 
 #squaresWrapper {
@@ -21,7 +21,7 @@
     width: 100%;
     padding-top: 100%;
     position: relative;
-    transition: rotate 2s linear 1s;
+    transition: rotate 2s ease 1s;
     background-image: url("kyleP2.svg");
     background-size: 300%;
   }
@@ -33,6 +33,7 @@
   
   .square:nth-child(2) {
     background-position: top center;
+    transition: rotate 2s ease 1s;
     transform: rotate(var(--rotVar1));
   }
   

@@ -4,7 +4,9 @@
   --dontScrollBody-Overflow: auto;
   --dontScrolDetail-Height: auto;
   --dontScrollDetail-Overflow: auto;
+  /* and this to keep the vertical and horizontal gutters even*/
   --columnRowGap: 2vw;
+  --paddingTop: 12.5vh;
 }
 
 body {
@@ -16,10 +18,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* img {
+img {
   min-width: 100%;
-  /* max-width: 200%;
-} */
+  max-width: 100%;
+}
 
 p {
   word-wrap: break-word;
@@ -43,23 +45,27 @@ p {
   padding: 0px 5% 2.5% 5%;
   grid-row-gap: var(--columnRowGap);
   grid-auto-flow: row;
+  box-sizing: border-box;
 }
 
 .one { /*first content wrapper for main page*/
-  padding-top: 12.5vh;
-  height: calc(87.5vh - 2.5%);
+  padding-top: var(--paddingTop);
+  min-height: 100vh;
   max-height: 100vh;
+  grid-auto-rows: max-content;
 }
 
 .two { /*second content wrapper for main page*/
-  padding-top: 12.5vh;
-  height: calc(87.5vh - 2.5%);
-  grid-auto-rows: 1fr;
+  padding-top: var(--paddingTop);
+  min-height: 100vh;
+  /* grid-auto-rows: 1fr; */
+  grid-auto-rows: max-content;
+
 }
 
 .three { /*grid for the modal*/
-  padding-top: 12.5vh;
-  height: calc(87.5vh - 2.5%);
+  padding-top: var(--paddingTop);
+  min-height: 100vh;
   grid-auto-flow: column dense;
   grid-auto-rows: min-content;
 }
@@ -69,7 +75,7 @@ p {
   grid-row: 1;
   object-fit: cover;
   overflow: hidden;
-  /* max-height: 50vh; */
+  margin-bottom: 0;
 }
 
 .header {
@@ -93,9 +99,9 @@ p {
   grid-column: 1;
   grid-row: 1;
   align-self: flex-end;
+  text-align: right;
   font-weight: 700;
   font-size: 22px;
-  text-align: right;
   padding: 0px;
   margin: 0px;
 }
@@ -136,6 +142,10 @@ p {
   top: 0; */
 }
 
+.content-item-wrapper {
+  grid-column: auto / span 1;
+}
+
 .content-thumb {
   height: 0;
   padding-top: 75%;
@@ -144,24 +154,26 @@ p {
   z-index: 1;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: right center;
 }
 
 .content-text {
   padding-top: 5%;
   width: 100%;
   overflow: hidden;
+  margin-top: 0px;
 }
 
 .content-title {
   font-size: 20px;
-  line-height: .25em;
+  line-height: 20px;
+  margin-top: 0px;
   font-family: mono45-headline, monospace;
 }
 
 .content-caption {
   font-size: 16px;
-  padding-top: 0px;
+  margin-top: -.5em;
 }
 
 .oneColImg {
@@ -222,4 +234,70 @@ p {
   margin: auto;
   align-self: center;
   overflow-y: auto;
+}
+
+@media only screen and (max-width: 600px) {
+  .one {
+    max-height: none;
+    height: auto;
+  }
+
+  .nav-links-wrapper {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+    text-align: left;
+    margin-bottom: 3%;
+    margin-top: 15%;
+    /* margin-top: -10%; */
+  }
+
+  .nav-link {
+    align-self: flex-start;
+    margin-top: 5%;
+  }
+
+  .navArrow {
+    grid-column: 3 / span 2;
+    grid-row: 2;
+    margin-left: -20%;
+    margin-top: 0%;
+    margin-bottom: -11.5%;
+    background-position: left bottom;
+  }
+
+  .intro-text-wrapper {
+    grid-column: 1 / span 4;
+    grid-row: 3;
+    margin-top: 10%;
+  }
+
+  .hero-image-wrapper {
+    grid-column: 1 / span 4;
+  }
+
+  .content-item-wrapper {
+    grid-column: auto / span 4;
+  }
+
+  .detailText {
+    grid-column: 1 / span 4;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    left: auto;
+  }
+  
+  .oneColImg, .twoColImg, .threeColImg {
+    grid-column: 1 / span 4;
+  }
+
+  :root {
+    --paddingTop: 8vh;
+  }
+
+  .content-wrapper {
+    width: 96%;
+    padding-left: 2%;
+    padding-right: 2%;
+  }
 }

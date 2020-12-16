@@ -206,6 +206,12 @@ p {
   width: calc(25% - 4vw);
   max-width: 280px;
   left: 5%;
+  overflow: scroll;
+  max-height: 80vh;
+}
+
+.detailText::-webkit-scrollbar {
+  display: none;
 }
 
 .multi-modal-background {
@@ -285,7 +291,9 @@ p {
     width: 100%;
     max-width: 100%;
     left: auto;
+    max-height: none;
   }
+
   
   .oneColImg, .twoColImg, .threeColImg {
     grid-column: 1 / span 4;

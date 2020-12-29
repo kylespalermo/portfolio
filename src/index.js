@@ -7,7 +7,7 @@ import ApolloClient from "apollo-boost";
 import * as serviceWorker from './serviceWorker';
 
 const client = new ApolloClient({
-  uri: "https://api-us-east-1.graphcms.com/v2/cke1hie771xhj01z0948ccp97/master"
+  uri: "https://api-us-east-1.graphcms.com/v2/" + secretKey + "/master"
 });
 
 ReactDOM.render(

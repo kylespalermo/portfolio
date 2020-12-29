@@ -6,6 +6,10 @@ import { ApolloProvider } from "react-apollo";
 import ApolloClient from "apollo-boost";
 import * as serviceWorker from './serviceWorker';
 
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
+
 const apiKey = process.env.REACT_APP_API_KEY;
 
 const client = new ApolloClient({

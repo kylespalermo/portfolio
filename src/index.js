@@ -5,10 +5,11 @@ import App from './App';
 import { ApolloProvider } from "react-apollo";
 import ApolloClient from "apollo-boost";
 import * as serviceWorker from './serviceWorker';
-import REACT_APP_API_KEY from './process.env.local';
+
+const apiKey = process.env.REACT_APP_API_KEY;
 
 const client = new ApolloClient({
-  uri: "https://api-us-east-1.graphcms.com/v2/" + REACT_APP_API_KEY + "/master"
+  uri: "https://api-us-east-1.graphcms.com/v2/" + apiKey + "/master"
 });
 
 ReactDOM.render(

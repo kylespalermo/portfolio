@@ -18,6 +18,7 @@ const PIECES_QUERY = gql`
           url
           imageColSpan
           border
+          imageMainAlt
         }
     }
     heroImgs {

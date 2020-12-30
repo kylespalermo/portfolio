@@ -7,12 +7,11 @@ var colVar = 3;
 class Detail extends Component {
   constructor(props) {
     super(props);
-    if (this.props.detailImg.imageColSpan == 2) {
+    if (this.props.detailImg.imageColSpan === 2) {
       number = "threeColImg"
-    } else if (this.props.detailImg.imageColSpan == 1) {
+    } else if (this.props.detailImg.imageColSpan === 1) {
 
-      console.log(colVar);
-      if (colVar % 3 == 0) {
+      if (colVar % 3 === 0) {
         number = "twoColImg";
       } else {
         number = "oneColImg";
@@ -20,14 +19,12 @@ class Detail extends Component {
       colVar++;
     }
 
-    if (this.props.detailImg.border == true) {
+    if (this.props.detailImg.border === true) {
       borderVar = "1px solid grey";
       } else { 
           borderVar = "none";
         }
     
-    console.log(borderVar);
-
     this.state = {
       modalImgStyle: number,
       detailChecked: false,
@@ -40,7 +37,7 @@ class Detail extends Component {
 
   detailView() {
     this.setState(prevState => ({ detailChecked: !prevState.detailChecked }));
-    if (this.state.detailChecked == false) {
+    if (this.state.detailChecked === false) {
       document.documentElement.style.setProperty('--dontScrollDetail-Height', "100vh");
       document.documentElement.style.setProperty('--dontScrollDetail-Overflow', "hidden");
     } else {
@@ -51,16 +48,14 @@ class Detail extends Component {
 
   render() {
 
-    // const modalImgStyle = ;
-
     return (
       <div className={this.state.modalImgStyle} style={this.state.isBorder} >
-        <img src={this.props.detailImg.url} onClick={() => this.detailView()} />
-        {this.state.detailChecked == true &&
+        <img src={this.props.detailImg.url} onClick={() => this.detailView()} alt = {this.props.detailImg.imageMainAlt} />
+        {this.state.detailChecked === true &&
           <DetailModal>
             <div className="detail-modal-background" onClick={() => this.detailView()}>
               <div className="singleImgDetail">
-                <img src={this.props.detailImg.url} />
+                <img src={this.props.detailImg.url} alt = {this.props.detailImg.imageMainAlt}/>
               </div>
             </div>
 

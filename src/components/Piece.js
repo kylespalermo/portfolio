@@ -1,26 +1,32 @@
 import React, {Component} from 'react';
 import Detail from "./Detail.js";
 import DetailModal from "./DetailModal.js";
+var scrollPos;
 
 class Piece extends Component {
  
   constructor(props) {
     super(props);
-    this.state = { isChecked: false
+    this.state = {
+      isChecked: false,
     }
   }
 
   getDetail() {
+
+    if (this.state.isChecked === false) {
+      scrollPos = document.querySelector('html').scrollTop;
+      console.log("SCROLLPOS//  " + scrollPos);
+    }
     
 
-    this.setState(prevState => ({ isChecked: !prevState.isChecked }));
-    let scrollPos = document.querySelector('html').scrollTop;
-    if (this.state.isChecked == true) {
-    window.scrollTo(0, scrollPos); } else {
+    this.setState(prevState => ({ isChecked: !prevState.isChecked }));    
+    if (this.state.isChecked === true) {
+      window.scrollTo(0, scrollPos); } else {
       window.scrollTo(0, 0);
     }
 
-    if (this.state.isChecked == false) {
+    if (this.state.isChecked === false) {
       document.documentElement.style.setProperty('--dontScrollBody-Height', "100vh");
       document.documentElement.style.setProperty('--dontScrollBody-Overflow', "hidden");
       } else {
@@ -37,26 +43,21 @@ class Piece extends Component {
     
     return (
       <div className = "content-item-wrapper">
-        <div className = "content-thumb"style={{backgroundImage: "url(" + this.props.portfolioItem.thumbnail.url + ")"}} onClick={() => this.getDetail()} />
+        <div className = "content-thumb" style={{backgroundImage: "url(" + this.props.portfolioItem.thumbnail.url + ")"}} onClick={() => this.getDetail()} />
         <div className = "content-text">
           <p className = "content-title">{this.props.portfolioItem.title}</p>
           <p className = "content-caption">{this.props.portfolioItem.caption}</p>
         </div>
-        {this.state.isChecked == true &&
+        {this.state.isChecked === true &&
         <DetailModal>
           <div className="multi-modal-background">
             <div className = "content-wrapper three">
               <div className = "detailText">
-                <p class = "content-title">{this.props.portfolioItem.title}</p>
+                <p className = "content-title">{this.props.portfolioItem.title}</p>
                 <p dangerouslySetInnerHTML={{__html: this.props.portfolioItem.pieceDetailText.html}}/>
-
               </div>
                 {details.map(detail => <Detail key = {detail.toString()} detailImg = {detail} />)}
-                {/* {detailImgsCount = details.length}
-                {console.log(detailImgsCount)} */}
-                {/* <Detail detailImgsCountFromParent = {detailImgsCount}/> */}
-
-                  <div className = "exit" onClick={() => this.getDetail()}>X</div>
+                <div className = "exit" onClick={() => this.getDetail()}>X</div>
             </div>
           </div>
                   </DetailModal>

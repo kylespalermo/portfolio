@@ -40,7 +40,7 @@ class NameBanner extends Component {
 
     setRotation(rotVarNum) {
         this.state.rotVars[rotVarNum] = this.state.rotVars[rotVarNum] + 90;
-        console.log(this.state.rotVars[rotVarNum]);
+        // console.log(this.state.rotVars[rotVarNum]);
         document.documentElement.style.setProperty('--rotVar' + rotVarNum, this.state.rotVars[rotVarNum] + "deg");
       }
 

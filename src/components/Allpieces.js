@@ -24,20 +24,20 @@ class Allpieces extends Component {
               <div className = "main-wrapper">
                 <div className = "content-wrapper one">
                   <div className = "nav-links-wrapper">
-                    <div class = "nav-link">
-                        <a class = "bigLink" href="https://drive.google.com/file/d/1q734iPWstp0x__i-SOYPF3tTDD3ca1EH/view">CV</a><br/>
+                    <div className = "nav-link">
+                        <a className = "bigLink" href="https://drive.google.com/file/d/1q734iPWstp0x__i-SOYPF3tTDD3ca1EH/view">CV</a><br/>
                     </div>
-                    <div class = "nav-link">
-                        <a class = "bigLink" href="https://kylepalermo.com/writing">Writing</a><br/>
+                    <div className = "nav-link">
+                        <a className = "bigLink" href="https://kylepalermo.com/writing">Writing</a><br/>
                     </div>
-                    <div class = "nav-link">
-                        <a class = "bigLink" href="https://kpalermophoto.myportfolio.com/">Photo</a><br/>
+                    <div className = "nav-link">
+                        <a className = "bigLink" href="https://kpalermophoto.myportfolio.com/">Photo</a><br/>
                     </div>
-                    <div class = "nav-link" id="scroll">
+                    <div className = "nav-link" id="scroll">
                         <span>Design Work</span><br/>
                     </div>
                   </div>
-                  <div class = "navArrow"></div>
+                  <div className = "navArrow"></div>
                   <div className = "intro-text-wrapper">
                     <div className = "intro-text">
                       {introtexts.map(intro => <IntroText key={intro.toString()} introTextGet={intro} />)}

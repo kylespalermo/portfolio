@@ -16,7 +16,6 @@ class Piece extends Component {
 
     if (this.state.isChecked === false) {
       scrollPos = document.querySelector('html').scrollTop;
-      console.log("SCROLLPOS//  " + scrollPos);
     }
     
 

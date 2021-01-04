@@ -1,14 +1,16 @@
 import React from "react";
 import RotateSquares from "./RotateSquares";
 
-class RotateComponent extends React.Component {
-  render() {
+
+function RotateComponent () {
+    
+
     return (
       <RotateSquares timing={150}>
-        <div className="square"></div>
+        <div className="square" ></div>
       </RotateSquares>
     );
   }
-}
+
 
 export default RotateComponent;

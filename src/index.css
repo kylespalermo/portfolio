@@ -269,6 +269,7 @@ p {
     margin-top: 0%;
     margin-bottom: -11.5%;
     background-position: left bottom;
+    background-image: url("components/arrow2.svg");
   }
 
   .intro-text-wrapper {

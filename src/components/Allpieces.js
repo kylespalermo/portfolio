@@ -28,7 +28,7 @@ class Allpieces extends Component {
                         <a className = "bigLink" href="https://drive.google.com/file/d/1q734iPWstp0x__i-SOYPF3tTDD3ca1EH/view">CV</a><br/>
                     </div>
                     <div className = "nav-link">
-                        <a className = "bigLink" href="https://kylepalermo.com/writing">Writing</a><br/>
+                        <a className = "bigLink" href="https://kpalermo.myportfolio.com/writing">Writing</a><br/>
                     </div>
                     <div className = "nav-link">
                         <a className = "bigLink" href="https://kpalermophoto.myportfolio.com/">Photo</a><br/>

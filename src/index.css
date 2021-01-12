@@ -7,6 +7,9 @@
   /* and this to keep the vertical and horizontal gutters even*/
   --columnRowGap: 2vw;
   --paddingTop: 12.5vh;
+  /*this sets position of fixed div for detail text in 1st level modal*/
+  --detailTextTop: auto;
+  --detailTextLeft: auto;
 }
 
 body {
@@ -36,7 +39,7 @@ p {
 }
 
 .content-wrapper {
-  max-width: 1000px;
+  max-width: 75vw;
   width: 90%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -51,7 +54,7 @@ p {
 .one { /*first content wrapper for main page*/
   padding-top: var(--paddingTop);
   min-height: 100vh;
-  max-height: 100vh;
+  /* max-height: 100vh; */
   grid-auto-rows: max-content;
 }
 
@@ -138,8 +141,6 @@ p {
 .intro-text {
   line-height: 22px;
   font-size: 14px;
-  /* position: absolute;
-  top: 0; */
 }
 
 .content-item-wrapper {
@@ -167,12 +168,13 @@ p {
 .content-title {
   font-size: 20px;
   line-height: 20px;
-  margin-top: 0px;
+  /* margin-top: 0px; */
   font-family: mono45-headline, monospace;
 }
 
 .content-caption {
-  font-size: 16px;
+  font-size: 14px;
+  line-height: 22px;
   margin-top: -.5em;
 }
 
@@ -200,14 +202,21 @@ p {
   right: 10px;
 }
 
-.detailText {
+.fixedText {
   position: fixed;
+  transform: translateX(var(--detailTextLeft));
+  padding-top: var(--paddingTop);
+  min-height: 100vh;
+  grid-auto-flow: column dense;
+  grid-auto-rows: min-content;
+}
+
+.detailText {
   font-size: 14px;
-  width: calc(25% - 4vw);
-  max-width: 280px;
-  left: 5%;
   overflow: scroll;
   max-height: 80vh;
+  /* height: 80vh; */
+  grid-column: 1;
 }
 
 .detailText::-webkit-scrollbar {
@@ -242,7 +251,11 @@ p {
   overflow-y: auto;
 }
 
-@media only screen and (max-width: 600px) {
+.threeColText {
+  grid-column: 2 / span 3;
+}
+
+@media only screen and (max-width: 1000px) {
   .one {
     max-height: none;
     height: auto;
@@ -254,7 +267,6 @@ p {
     text-align: left;
     margin-bottom: 3%;
     margin-top: 15%;
-    /* margin-top: -10%; */
   }
 
   .nav-link {
@@ -265,9 +277,9 @@ p {
   .navArrow {
     grid-column: 3 / span 2;
     grid-row: 2;
-    margin-left: -20%;
+    margin-left: 5%;
     margin-top: 0%;
-    margin-bottom: -11.5%;
+    margin-bottom: -8%;
     background-position: left bottom;
     background-image: url("components/arrow2.svg");
   }
@@ -288,14 +300,19 @@ p {
 
   .detailText {
     grid-column: 1 / span 4;
-    position: relative;
     width: 100%;
     max-width: 100%;
     left: auto;
     max-height: none;
   }
 
-  
+  .fixedText {
+    position: relative;
+    transform: translateX(var(--detailTextLeft));
+    padding-top: var(--paddingTop);
+    min-height: auto;
+    }
+
   .oneColImg, .twoColImg, .threeColImg {
     grid-column: 1 / span 4;
   }
@@ -306,7 +323,12 @@ p {
 
   .content-wrapper {
     width: 96%;
+    max-width: 95vw;
     padding-left: 2%;
     padding-right: 2%;
+  }
+
+  .threeColText {
+    grid-column: 1 / span 4;
   }
 }

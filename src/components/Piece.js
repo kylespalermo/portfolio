@@ -12,6 +12,9 @@ class Piece extends Component {
     }
   }
 
+
+
+
   getDetail() {
 
     if (this.state.isChecked === false) {
@@ -50,17 +53,18 @@ class Piece extends Component {
         {this.state.isChecked === true &&
         <DetailModal>
           <div className="multi-modal-background">
-            <div className = "content-wrapper three">
+            <div className = "content-wrapper fixedText">
               <div className = "detailText">
                 <p className = "content-title">{this.props.portfolioItem.title}</p>
                 <p dangerouslySetInnerHTML={{__html: this.props.portfolioItem.pieceDetailText.html}}/>
               </div>
-                {details.map(detail => <Detail key = {detail.toString()} detailImg = {detail} />)}
-                <div className = "exit" onClick={() => this.getDetail()}>X</div>
+            </div>
+            <div className="content-wrapper three" id = "refRect">
+              {details.map(detail => <Detail key = {detail.id} detailImg = {detail} />)}
+              <div className = "exit" onClick={() => this.getDetail()}>X</div>
             </div>
           </div>
-                  </DetailModal>
-
+        </DetailModal>
         }
       </div>  
     )

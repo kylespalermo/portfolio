@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { Query } from 'react-apollo';
 import PIECES_QUERY from './all-pieces/index';
 import Piece from './Piece';
-// import Hero from './Hero';
 import IntroText from './IntroText';
 import NameBanner from './NameBanner';
+import AboutMe from './AboutMe';
 
 class Allpieces extends Component {
   
@@ -18,6 +18,7 @@ class Allpieces extends Component {
 
           const pieces = data.portfolioPieces;
           const introtexts = data.introTexts;
+          const aboutMes = data.aboutMes;
 
           return (
             <div>
@@ -25,7 +26,7 @@ class Allpieces extends Component {
                 <div className = "content-wrapper one">
                   <div className = "nav-links-wrapper">
                     <div className = "nav-link">
-                        <a className = "bigLink" href="https://drive.google.com/file/d/1q734iPWstp0x__i-SOYPF3tTDD3ca1EH/view">CV</a><br/>
+                        <span className = "bigLink">{aboutMes.map(aboutMe => <AboutMe key={aboutMe.id} aboutMeTextGet={aboutMe} />)}</span>
                     </div>
                     <div className = "nav-link">
                         <a className = "bigLink" href="https://kpalermo.myportfolio.com/writing">Writing</a><br/>
@@ -40,7 +41,7 @@ class Allpieces extends Component {
                   <div className = "navArrow"></div>
                   <div className = "intro-text-wrapper">
                     <div className = "intro-text">
-                      {introtexts.map(intro => <IntroText key={intro.toString()} introTextGet={intro} />)}
+                      {introtexts.map(intro => <IntroText key={intro.id} introTextGet={intro} />)}
                     </div>
                   </div>
                   <div className = "hero-image-wrapper">
@@ -48,7 +49,7 @@ class Allpieces extends Component {
                   </div>
                 </div>
                 <div className ="content-wrapper two">              
-                  {pieces.map(piece => <Piece key={piece.toString()} portfolioItem={piece} />)}
+                  {pieces.map(piece => <Piece key={piece.id} portfolioItem={piece} />)}
                 </div>
               </div>
             </div>

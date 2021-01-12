@@ -12,10 +12,17 @@ class DetailModal extends Component {
 
     componentDidMount() {
         modalRoot.appendChild(this.element);
+        this.getRefRect();
     }
 
     componentWillUnmount() {
         modalRoot.removeChild(this.element);
+    }
+
+    getRefRect(){
+        var rect = document.getElementById("refRect").getBoundingClientRect(); //rect.top, rect.left
+        var windowWidth = document.getElementById("refRect").offsetWidth;
+        document.documentElement.style.setProperty('--detailTextLeft', ((rect.left/windowWidth) * 100)+ "%");
     }
 
     render() {

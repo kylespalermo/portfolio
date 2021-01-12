@@ -168,7 +168,7 @@ p {
 .content-title {
   font-size: 20px;
   line-height: 20px;
-  /* margin-top: 0px; */
+  margin-top: 0;
   font-family: mono45-headline, monospace;
 }
 
@@ -253,6 +253,8 @@ p {
 
 .threeColText {
   grid-column: 2 / span 3;
+  margin-top: -2.5%;
+  line-height: 1.5em;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -308,7 +310,7 @@ p {
 
   .fixedText {
     position: relative;
-    transform: translateX(var(--detailTextLeft));
+    transform: translateX(0px);
     padding-top: var(--paddingTop);
     min-height: auto;
     }

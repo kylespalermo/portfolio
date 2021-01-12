@@ -42,14 +42,14 @@ class AboutMe extends Component {
         {this.state.isChecked === true &&
         <DetailModal>
             <div className="multi-modal-background">
-                <div className = "content-wrapper fixedText" id = "refRect">
+                <div className = "content-wrapper fixedText" >
                   <div className = "detailText">
                     <p className = "content-title">{this.props.aboutMeTextGet.title}</p>
                     <p dangerouslySetInnerHTML={{__html: this.props.aboutMeTextGet.sideText.html}}/>
                     <img src = {this.props.aboutMeTextGet.photos.url} />
                   </div>
                 </div>
-                <div className = "content-wrapper three">
+                <div className = "content-wrapper three" id = "refRect">
                   <div className = "threeColText">
                       <p dangerouslySetInnerHTML={{__html: this.props.aboutMeTextGet.mainText.html}}/>
                   </div>

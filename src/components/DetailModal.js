@@ -13,6 +13,7 @@ class DetailModal extends Component {
     componentDidMount() {
         modalRoot.appendChild(this.element);
         this.getRefRect();
+        window.addEventListener('resize', this.getRefRect());
     }
 
     componentWillUnmount() {

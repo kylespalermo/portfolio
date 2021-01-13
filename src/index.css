@@ -7,9 +7,10 @@
   /* and this to keep the vertical and horizontal gutters even*/
   --columnRowGap: 2vw;
   --paddingTop: 12.5vh;
-  /*this sets position of fixed div for detail text in 1st level modal*/
-  --detailTextTop: auto;
+  /*this sets X position of fixed div for detail text in 1st level modal*/
   --detailTextLeft: auto;
+  /* this gives us a width for the detail text in that 1st level modal */
+  --fixedTextDivWidth: auto;
 }
 
 body {
@@ -71,6 +72,8 @@ p {
   min-height: 100vh;
   grid-auto-flow: column dense;
   grid-auto-rows: min-content;
+  z-index: 4;
+  position: relative;
 }
 
 .hero-image-wrapper {
@@ -200,15 +203,19 @@ p {
   position: fixed;
   top: 10px;
   right: 10px;
+  z-index: 100;
 }
 
 .fixedText {
   position: fixed;
   transform: translateX(var(--detailTextLeft));
   padding-top: var(--paddingTop);
+  /* padding-left: 5%; */
   min-height: 100vh;
-  grid-auto-flow: column dense;
-  grid-auto-rows: min-content;
+  /* grid-auto-flow: column dense;
+  grid-auto-rows: min-content; */
+  width: var(--fixedTextDivWidth);
+  z-index: 5;
 }
 
 .detailText {
@@ -216,7 +223,7 @@ p {
   overflow: scroll;
   max-height: 80vh;
   /* height: 80vh; */
-  grid-column: 1;
+  /* grid-column: 1; */
 }
 
 .detailText::-webkit-scrollbar {
@@ -300,20 +307,24 @@ p {
     grid-column: auto / span 4;
   }
 
+  .fixedText {
+    transform: translateX(0px);
+    padding-top: var(--paddingTop);
+    width: 96%;
+    padding-left: 2%;
+    padding-right: 2%;
+    min-height: auto;
+    position: relative;    
+    /* margin-left: auto;
+    margin-right: auto; */
+    }
+
   .detailText {
     grid-column: 1 / span 4;
     width: 100%;
     max-width: 100%;
-    left: auto;
-    max-height: none;
+    max-height: none;    
   }
-
-  .fixedText {
-    position: relative;
-    transform: translateX(0px);
-    padding-top: var(--paddingTop);
-    min-height: auto;
-    }
 
   .oneColImg, .twoColImg, .threeColImg {
     grid-column: 1 / span 4;

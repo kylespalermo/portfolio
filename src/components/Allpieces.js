@@ -7,14 +7,14 @@ import NameBanner from './NameBanner';
 import AboutMe from './AboutMe';
 
 class Allpieces extends Component {
-  
+
   render() {
     return (
       <Query query={PIECES_QUERY}>
-       {({ loading, error, data }) => {
+        {({ loading, error, data }) => {
 
           if (loading) return <div>this should just take a sec</div>
-          if (error)   return <div>my bad, something went wrong</div>
+          if (error) return <div>my bad, something went wrong</div>
 
           const pieces = data.portfolioPieces;
           const introtexts = data.introTexts;
@@ -22,33 +22,33 @@ class Allpieces extends Component {
 
           return (
             <div>
-              <div className = "main-wrapper">
-                <div className = "content-wrapper one">
-                  <div className = "nav-links-wrapper">
-                    <div className = "nav-link">
-                        <span className = "bigLink">{aboutMes.map(aboutMe => <AboutMe key={aboutMe.id} aboutMeTextGet={aboutMe} />)}</span>
+              <div className="main-wrapper">
+                <div className="content-wrapper one">
+                  <div className="nav-links-wrapper" id="refRectWidth">
+                    <div className="nav-link">
+                      <span className="bigLink">{aboutMes.map(aboutMe => <AboutMe key={aboutMe.id} aboutMeTextGet={aboutMe} />)}</span>
                     </div>
-                    <div className = "nav-link">
-                        <a className = "bigLink" href="https://kpalermo.myportfolio.com/writing">Writing</a><br/>
+                    <div className="nav-link">
+                      <a className="bigLink" href="https://kpalermo.myportfolio.com/writing">Writing</a><br />
                     </div>
-                    <div className = "nav-link">
-                        <a className = "bigLink" href="https://kpalermophoto.myportfolio.com/">Photo</a><br/>
+                    <div className="nav-link">
+                      <a className="bigLink" href="https://kpalermophoto.myportfolio.com/">Photo</a><br />
                     </div>
-                    <div className = "nav-link" id="scroll">
-                        <span>Design Work</span><br/>
+                    <div className="nav-link" id="scroll">
+                      <span>Design Work</span><br />
                     </div>
                   </div>
-                  <div className = "navArrow"></div>
-                  <div className = "intro-text-wrapper">
-                    <div className = "intro-text">
+                  <div className="navArrow"></div>
+                  <div className="intro-text-wrapper">
+                    <div className="intro-text">
                       {introtexts.map(intro => <IntroText key={intro.id} introTextGet={intro} />)}
                     </div>
                   </div>
-                  <div className = "hero-image-wrapper">
+                  <div className="hero-image-wrapper">
                     <NameBanner></NameBanner>
                   </div>
                 </div>
-                <div className ="content-wrapper two">              
+                <div className="content-wrapper two">
                   {pieces.map(piece => <Piece key={piece.id} portfolioItem={piece} />)}
                 </div>
               </div>

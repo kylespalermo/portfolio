@@ -17,7 +17,6 @@ class AboutMe extends Component {
     if (this.state.isChecked === false) {
       scrollPos = document.querySelector('html').scrollTop;
     }
-    
 
     this.setState(prevState => ({ isChecked: !prevState.isChecked }));    
     if (this.state.isChecked === true) {
@@ -40,23 +39,23 @@ class AboutMe extends Component {
       <div>
         <span onClick={() => this.getAboutMe()}><u>About Me</u></span>
         {this.state.isChecked === true &&
-        <DetailModal>
-            <div className="multi-modal-background">
-                <div className = "content-wrapper fixedText" >
-                  <div className = "detailText">
-                    <p className = "content-title">{this.props.aboutMeTextGet.title}</p>
-                    <p dangerouslySetInnerHTML={{__html: this.props.aboutMeTextGet.sideText.html}}/>
-                    <img src = {this.props.aboutMeTextGet.photos.url} />
+          <DetailModal>
+              <div className="multi-modal-background"  id = "refRect">
+                  <div className = "fixedText" >
+                    <div className = "detailText">
+                      <p className = "content-title">{this.props.aboutMeTextGet.title}</p>
+                      <p dangerouslySetInnerHTML={{__html: this.props.aboutMeTextGet.sideText.html}}/>
+                      <img src = {this.props.aboutMeTextGet.photos.url} />
+                    </div>
                   </div>
-                </div>
-                <div className = "content-wrapper three" id = "refRect">
-                  <div className = "threeColText">
-                      <p dangerouslySetInnerHTML={{__html: this.props.aboutMeTextGet.mainText.html}}/>
+                  <div className = "content-wrapper three">
+                    <div className = "threeColText">
+                        <p dangerouslySetInnerHTML={{__html: this.props.aboutMeTextGet.mainText.html}}/>
+                    </div>
                   </div>
-                  <div className = "exit" onClick={() => this.getAboutMe()}>X</div>
-                </div>
-            </div>
-        </DetailModal>
+              </div>
+              <div className = "exit" onClick={() => this.getAboutMe()}>X</div>
+          </DetailModal>
         }
       </div>  
     )

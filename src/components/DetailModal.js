@@ -21,9 +21,12 @@ class DetailModal extends Component {
     }
 
     getRefRect(){
-        var rect = document.getElementById("refRect").getBoundingClientRect(); //rect.top, rect.left
-        var windowWidth = document.getElementById("refRect").offsetWidth;
-        document.documentElement.style.setProperty('--detailTextLeft', ((rect.left/windowWidth) * 100)+ "%");
+        var rect = document.getElementById("refRectWidth").getBoundingClientRect(); //rect.top, rect.left
+        var displayAreaWidth = document.getElementById("refRect").offsetWidth;
+        console.log(window.innerWidth + " <-- window // refRect --> " + displayAreaWidth);
+        var textDivWidth = document.getElementById("refRectWidth").offsetWidth;
+        document.documentElement.style.setProperty('--detailTextLeft', ((rect.left/displayAreaWidth) * 100) + "vw");
+        document.documentElement.style.setProperty('--fixedTextDivWidth', ((textDivWidth/displayAreaWidth) * 100) + "%");
     }
 
     render() {

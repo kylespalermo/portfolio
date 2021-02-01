@@ -13,6 +13,10 @@
   --fixedTextDivWidth: auto;
 }
 
+a, .bigLink, .content-thumb, .detail-img-link, .exit {
+  cursor: pointer;
+}
+
 body {
   margin: 0;
   font-family: array-mono, serif;

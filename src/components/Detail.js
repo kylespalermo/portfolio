@@ -50,7 +50,7 @@ class Detail extends Component {
 
     return (
       <div className={this.state.modalImgStyle} style={this.state.isBorder} >
-        <img src={this.props.detailImg.url} onClick={() => this.detailView()} alt = {this.props.detailImg.imageMainAlt} />
+        <img className = "detail-img-link" src={this.props.detailImg.url} onClick={() => this.detailView()} alt = {this.props.detailImg.imageMainAlt} />
         {this.state.detailChecked === true &&
           <DetailModal>
             <div className="detail-modal-background" onClick={() => this.detailView()}>

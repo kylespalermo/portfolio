@@ -58,7 +58,6 @@ class Detail extends Component {
                 <img src={this.props.detailImg.url} alt = {this.props.detailImg.imageMainAlt}/>
               </div>
             </div>
-
           </DetailModal>
         }
       </div>

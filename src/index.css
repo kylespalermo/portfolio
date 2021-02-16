@@ -76,7 +76,7 @@ p {
   min-height: 100vh;
   grid-auto-flow: column dense;
   grid-auto-rows: min-content;
-  z-index: 4;
+  z-index: 3;
   position: relative;
 }
 
@@ -207,7 +207,7 @@ p {
   position: fixed;
   top: 10px;
   right: 10px;
-  z-index: 100;
+  z-index: 4;
 }
 
 .fixedText {
@@ -219,7 +219,7 @@ p {
   /* grid-auto-flow: column dense;
   grid-auto-rows: min-content; */
   width: var(--fixedTextDivWidth);
-  z-index: 5;
+  z-index: 6;
 }
 
 .detailText {
@@ -247,7 +247,7 @@ p {
   }
 
 .detail-modal-background {
-  z-index: 3;
+  z-index: 5;
   position: absolute;
   width: 100vw;
   min-height: 100vh;

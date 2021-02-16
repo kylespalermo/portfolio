@@ -14,24 +14,21 @@ class Piece extends Component {
 
   getDetail() {
 
+    this.setState(prevState => ({ isChecked: !prevState.isChecked }));
     if (this.state.isChecked === false) {
       scrollPos = document.querySelector('html').scrollTop;
-    }
-
-    this.setState(prevState => ({ isChecked: !prevState.isChecked }));
-    if (this.state.isChecked === true) {
-      window.scrollTo(0, scrollPos);
-    } else {
-      window.scrollTo(0, 0);
-    }
-
-    if (this.state.isChecked === false) {
       document.documentElement.style.setProperty('--dontScrollBody-Height', "100vh");
       document.documentElement.style.setProperty('--dontScrollBody-Overflow', "hidden");
+      window.scrollTo(0, 0);
+      // console.log("open")
+      //console.log(this.state.isChecked)
     } else {
       document.documentElement.style.setProperty('--dontScrollBody-Height', "auto");
       document.documentElement.style.setProperty('--dontScrollBody-Overflow', "auto");
-    }
+      //console.log("close");
+      //console.log(this.state.isChecked)
+      window.scrollTo(0, scrollPos);
+    }   
   }
 
   render() {

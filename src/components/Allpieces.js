@@ -29,7 +29,7 @@ class Allpieces extends Component {
                       <span className="bigLink">{aboutMes.map(aboutMe => <AboutMe key={aboutMe.id} aboutMeTextGet={aboutMe} />)}</span>
                     </div>
                     <div className="nav-link">
-                      <a className="bigLink" href="https://kpalermo.myportfolio.com/writing">Writing</a><br />
+                      <a className="bigLink" href="https://kpalermophoto.myportfolio.com/writing">Writing</a><br />
                     </div>
                     <div className="nav-link">
                       <a className="bigLink" href="https://kpalermophoto.myportfolio.com/">Photo</a><br />

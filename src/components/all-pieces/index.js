@@ -1,7 +1,7 @@
 import gql from "graphql-tag";
 const PIECES_QUERY = gql`
   query {
-    portfolioPieces {
+    portfolioPieces(orderBy:orderValue_ASC) {
       id
       title
       imageAlt

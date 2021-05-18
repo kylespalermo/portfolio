@@ -265,7 +265,7 @@ p {
 .threeColText {
   grid-column: 2 / span 3;
   margin-top: -2.5%;
-  line-height: 20px;
+  line-height: 22px;
 }
 
 @media only screen and (max-width: 1000px) {

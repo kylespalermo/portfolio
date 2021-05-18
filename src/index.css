@@ -146,7 +146,7 @@ p {
 }
 
 .intro-text {
-  line-height: 18px;
+  line-height: 20px;
   font-size: 14px;
 }
 
@@ -181,7 +181,7 @@ p {
 
 .content-caption {
   font-size: 14px;
-  line-height: 18px;
+  line-height: 20px;
   margin-top: -.5em;
 }
 
@@ -265,7 +265,7 @@ p {
 .threeColText {
   grid-column: 2 / span 3;
   margin-top: -2.5%;
-  line-height:18px;
+  line-height: 20px;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -328,6 +328,7 @@ p {
     width: 100%;
     max-width: 100%;
     max-height: none;    
+    line-height: 20px;
   }
 
   .oneColImg, .twoColImg, .threeColImg {

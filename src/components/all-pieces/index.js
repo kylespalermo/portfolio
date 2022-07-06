@@ -7,7 +7,10 @@ const PIECES_QUERY = gql`
       imageAlt
       caption
       category
-        pieceDetailText {
+      client
+      roles
+      technologies
+      pieceDetailText {
         html
       }
       thumbnail {
@@ -29,8 +32,15 @@ const PIECES_QUERY = gql`
       }
     }
     introTexts {
+      introText
       id
-      introText 
+      photo {
+        id
+        url
+      }
+      links {
+        html
+      }
     }
     aboutMes {
       id

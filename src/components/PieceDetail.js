@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import PhotoModal from './PhotoModal';
 import DOMPurify from 'dompurify';
+import DetailModal from './DetailModal';
 
 
 class PieceDetail extends Component {
@@ -49,12 +49,17 @@ class PieceDetail extends Component {
     render() {
         const photos = this.props.photos;
         var cleanDetailText = DOMPurify.sanitize(this.props.pieceDetailText);
+        const indexOfActivePhoto = photos.findIndex(photo => photo.id === this.activePhoto);
 
         return (
         <div ref={this.pieceDetail} className="detail-grid">
-            {photos.map((photo, index, og) => <img className="detail-img" key={photo.id} src={photo.url} alt={photo.imageMainAlt} ref={(index === og.length-1) ? this.lastImage : undefined} onClick={() => this.handleClick(photo.id)}/>)}
+            {photos.map((photo, index, og) => <img className="detail-img" key={photo.id} src={photo.url} alt={photo.imageMainAlt} ref={(index === og.length-1) ? this.lastImage : undefined} onClick={() => this.handleClick(photo)}/>)}
             {this.state.isOpen === true &&
-                <PhotoModal key={this.state.activePhoto} photos={photos} activePhoto={this.state.activePhoto} closeModal={this.toggleOpen.bind(this)}></PhotoModal>
+            <DetailModal>
+              <div className="modal-background" onClick={this.toggleOpen}>
+                <img alt={this.state.activePhoto.imageMainAlt} className="modal-image" src={this.state.activePhoto.url}/>
+              </div>
+            </DetailModal>
             }
             <div dangerouslySetInnerHTML={{__html:cleanDetailText}}/>
         </div>

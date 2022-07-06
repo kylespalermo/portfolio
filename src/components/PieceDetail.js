@@ -12,6 +12,7 @@ class PieceDetail extends Component {
           activePhoto: "",
         }
         this.pieceDetail = React.createRef(null);
+        this.lastImage = React.createRef(null);
         this.updateHeight = this.props.updateHeight;
         this.toggleOpen = this.toggleOpen.bind(this);
         this.setActivePhoto = this.setActivePhoto.bind(this);
@@ -40,6 +41,9 @@ class PieceDetail extends Component {
         window.addEventListener("resize", () => {
             this.updateHeight(this.pieceDetail.current.scrollHeight)
         })
+        this.lastImage.current.addEventListener("load", () => {
+          this.updateHeight(this.pieceDetail.current.scrollHeight)
+        })
       }
 
     render() {
@@ -48,7 +52,7 @@ class PieceDetail extends Component {
 
         return (
         <div ref={this.pieceDetail} className="detail-grid">
-            {photos.map(photo => <img className="detail-img" key={photo.id} src={photo.url} alt={photo.imageMainAlt} onClick={() => this.handleClick(photo.id)}/>)}
+            {photos.map((photo, index, og) => <img className="detail-img" key={photo.id} src={photo.url} alt={photo.imageMainAlt} ref={(index === og.length-1) ? this.lastImage : undefined} onClick={() => this.handleClick(photo.id)}/>)}
             {this.state.isOpen === true &&
                 <PhotoModal key={this.state.activePhoto} photos={photos} activePhoto={this.state.activePhoto} closeModal={this.toggleOpen.bind(this)}></PhotoModal>
             }

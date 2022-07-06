@@ -23,9 +23,10 @@ class Homepage extends Component {
                 <HeroAnimation></HeroAnimation>
                 {introtexts.map(intro => <Intro key={intro.id} introGet={intro} />)}
                 <Allpieces pieces={pieces}></Allpieces>
-                <p className="back-matter">Built with love using <a href="https://reactjs.org/">React</a> & <a href="https://graphcms.com/">GraphCMS</a>. Typeset with <a href="http://www.basteleur.keussel.studio/">Basteleur</a> and <a href="https://fonts.google.com/specimen/Space+Grotesk">Space Grotesk</a>.<br/>
-                &copy; 2022 Kyle Palermo. All rights reserved.
-                </p>
+                <div className="back-matter">
+                  <p>Built with love using <a href="https://reactjs.org/">React</a> & <a href="https://graphcms.com/">GraphCMS</a>. Typeset with <a href="http://www.basteleur.keussel.studio/">Basteleur</a> and <a href="https://fonts.google.com/specimen/Space+Grotesk">Space Grotesk</a>.<br/></p>
+                  <p>&copy; 2022 Kyle Palermo. All rights reserved.</p>
+                </div>
             </main>
           )
         }}

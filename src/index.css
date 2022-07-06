@@ -290,6 +290,10 @@ h2 {
   margin-bottom: 2rem;
 }
 
+.back-matter > span {
+  margin-top: 1rem;
+}
+
 @media only screen and (max-width: 600px) {
 
   main {
@@ -297,16 +301,17 @@ h2 {
     margin-right: 0;
   }
 
-  p, .piece-collapsible, h1, h2 {
+  p, .piece-collapsible, h1, h2, .piece-detail {
     padding-left: 1vw;
-  }
-  
-  .piece-collapsible {
-    font-size: .75rem;
+    padding-right: 1vw;
   }
 
   .detail-grid > div > p {
     margin-right: 0;
+  }
+
+  .detail-grid > img {
+    grid-column: 1 / span 10;
   }
 
   .intro > img, .intro-text, .detail-grid {
@@ -318,7 +323,17 @@ h2 {
   }
 
   .keys-wrapper {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .piece-collapsible {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .piece-collapsible > li:nth-child(1) {
+    order: 5;
+    margin-top: 1rem;
   }
 }

@@ -312,4 +312,13 @@ h2 {
   .intro > img, .intro-text, .detail-grid {
     grid-column: 1 / span 10;
   }
+
+  .hero-animation {
+    overflow-X: hidden;
+  }
+
+  .keys-wrapper {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
 }

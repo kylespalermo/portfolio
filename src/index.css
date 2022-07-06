@@ -46,10 +46,11 @@ h2 {
   margin-top: 0;
 }
 
-a {
+a, .intro-links > li:last-child {
   text-decoration: none;
   color: var(--red);
   font-family: basteleur-bold, serif;
+  cursor: pointer;
 }
 
 body {
@@ -111,17 +112,14 @@ h2 {
 }
 
 .intro-links {
-  grid-row: 4;
-}
-
-.intro-links > ul {
   display: flex;
   align-items: flex-start;
   list-style: none;
   padding-left: 0;
+  grid-row: 4;
 }
 
-.intro-links > ul > li {
+.intro-links > li {
   margin-right: 1rem;
 }
 

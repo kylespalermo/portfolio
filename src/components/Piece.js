@@ -43,7 +43,7 @@ class Piece extends Component {
           </li>
         </ul>
         <div className="piece-detail" ref={ (pieceDetail) => { this.pieceDetail = pieceDetail }} style={{height: this.state.isOpen ? `${this.state.height}px` : `0px`}}>
-          <PieceDetail key={"detail_" + this.props.itemGet.id} ref={this.pieceDetailImages} photos={this.props.itemGet.imagesMain} updateHeight={this.updateHeight.bind(this)} pieceDetailText={this.props.itemGet.pieceDetailText.html}></PieceDetail>
+          <PieceDetail key={"detail_" + this.props.itemGet.id} photos={this.props.itemGet.imagesMain} updateHeight={this.updateHeight.bind(this)} pieceDetailText={this.props.itemGet.pieceDetailText.html}></PieceDetail>
         </div>
       </div>
     )

@@ -25,12 +25,6 @@ const PIECES_QUERY = gql`
         imageMainAlt
       }
     }
-    heroImgs {
-      heroImgMain {
-        url 
-        id 
-      }
-    }
     introTexts {
       introText
       id
@@ -38,8 +32,8 @@ const PIECES_QUERY = gql`
         id
         url
       }
-      links {
-        html
+      resume {
+        url
       }
     }
     aboutMes {

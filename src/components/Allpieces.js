@@ -12,10 +12,10 @@ const Allpieces = (props) => {
         }
       });
     return (
-      <section class="portfolio">
+      <section className="portfolio">
         <h1>Portfolio</h1>
-        <PortfolioSection name="Professional" items={professional}></PortfolioSection>
-        <PortfolioSection name="Explorations" items={explorations}></PortfolioSection>
+        <PortfolioSection key="professional" name="Professional" items={professional}></PortfolioSection>
+        <PortfolioSection key="explorations" name="Explorations" items={explorations}></PortfolioSection>
       </section>
         );
     }

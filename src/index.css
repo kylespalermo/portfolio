@@ -289,3 +289,27 @@ h2 {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
+
+@media only screen and (max-width: 600px) {
+
+  main {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  p, .piece-collapsible, h1, h2 {
+    padding-left: 1vw;
+  }
+  
+  .piece-collapsible {
+    font-size: .75rem;
+  }
+
+  .detail-grid > div > p {
+    margin-right: 0;
+  }
+
+  .intro > img, .intro-text, .detail-grid {
+    grid-column: 1 / span 10;
+  }
+}

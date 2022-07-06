@@ -10,7 +10,6 @@ class PhotoGrid extends Component {
           isOpen: false,
           activePhoto: "",
         }
-        console.log(props)
         this.giveHeight = this.props.giveHeight;
         this.toggleOpen = this.toggleOpen.bind(this);
         this.setActivePhoto = this.setActivePhoto.bind(this);
@@ -36,7 +35,6 @@ class PhotoGrid extends Component {
       }
 
       componentDidMount(){
-        console.log(this.pieceDetailImages)
         window.addEventListener("resize", this.giveHeight(this.pieceDetailImages))
       }
 

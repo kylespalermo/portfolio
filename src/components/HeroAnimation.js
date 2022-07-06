@@ -14,12 +14,10 @@ class HeroAnimation extends Component {
     
     closeSkew(){
         this.setState({ isSkewed: false})
-        console.log("closeSkew")
     }
 
     openSkew(){
         this.setState({ isSkewed: true})
-        console.log("openSkew")
     }
     
 
@@ -30,8 +28,8 @@ class HeroAnimation extends Component {
             chars.push(name.charAt(i));
         }
         return (
-        <div class="hero-animation" onMouseLeave={this.openSkew}>
-            <div class ="keys-wrapper">
+        <div className="hero-animation" onMouseLeave={this.openSkew}>
+            <div className="keys-wrapper">
                 {chars.map((char, index) => <KeyDiv key={index} char={char} isSkewed={this.state.isSkewed} closeSkew={this.closeSkew}/>)}
             </div>
         </div>

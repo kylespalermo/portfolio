@@ -11,7 +11,7 @@ const Intro = (props) => {
                 <p>{props.introGet.introText}</p>
                 <p className="intro-links" dangerouslySetInnerHTML={{__html:cleanIntroLinks}}/>
             </div>
-            <img src={props.introGet.photo.url} />
+            <img src={props.introGet.photo.url} alt="My partner and I at Brooklyn Botanical Garden" />
         </section>
         );
     }

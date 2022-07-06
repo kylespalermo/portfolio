@@ -36,14 +36,14 @@ class Piece extends Component {
           <li>{this.props.itemGet.title}</li>
           <li>{this.props.itemGet.client}</li>
           <li>
-            {this.props.itemGet.roles.map(role => <span key={role.id}>{role.replace("_", " ")}</span>)}
+            {this.props.itemGet.roles.map(role => <span key={role}>{role.replace("_", " ")}</span>)}
           </li>
           <li>
-            {this.props.itemGet.technologies.map(technology => <span key={technology.id}>{technology.replace("_", " ")}</span>)}
+            {this.props.itemGet.technologies.map(technology => <span key={technology}>{technology.replace("_", " ")}</span>)}
           </li>
         </ul>
         <div className="piece-detail" ref={ (pieceDetail) => { this.pieceDetail = pieceDetail }} style={{height: this.state.isOpen ? `${this.state.height}px` : `0px`}}>
-          <PieceDetail ref={this.pieceDetailImages} photos={this.props.itemGet.imagesMain} updateHeight={this.updateHeight.bind(this)} pieceDetailText={this.props.itemGet.pieceDetailText.html}></PieceDetail>
+          <PieceDetail key={"detail_" + this.props.itemGet.id} ref={this.pieceDetailImages} photos={this.props.itemGet.imagesMain} updateHeight={this.updateHeight.bind(this)} pieceDetailText={this.props.itemGet.pieceDetailText.html}></PieceDetail>
         </div>
       </div>
     )

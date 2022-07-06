@@ -17,7 +17,6 @@ class Homepage extends Component {
 
           const pieces = data.portfolioPieces;
           const introtexts = data.introTexts;
-          const aboutMes = data.aboutMes;
 
           return (
             <main>

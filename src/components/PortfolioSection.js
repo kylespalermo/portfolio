@@ -7,7 +7,7 @@ class PortfolioSection extends Component {
         return (
         <section className="portfolio-section">
             <h2>{this.props.name}</h2>
-            {items.map(item => <Piece key={item.id} itemGet={item} />)}
+            {items.map((item, index) => <Piece key={item.id} itemGet={item} />)}
         </section>
         );
       }

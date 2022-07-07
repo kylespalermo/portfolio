@@ -117,6 +117,7 @@ h2 {
   list-style: none;
   padding-left: 0;
   grid-row: 4;
+  flex-wrap: wrap;
 }
 
 .intro-links > li {
@@ -332,6 +333,10 @@ h2 {
 
   .piece-collapsible > li:nth-child(1) {
     order: 5;
+    margin-top: 1rem;
+  }
+
+  .intro-links > li {
     margin-top: 1rem;
   }
 }

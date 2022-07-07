@@ -22,7 +22,7 @@ class HeroAnimation extends Component {
     
 
     render() {
-        const name = "kylepalermo";
+        const name = "kylepalermo*";
         const chars = [];
         for (let i = 0; i < name.length; i++) {
             chars.push(name.charAt(i));
